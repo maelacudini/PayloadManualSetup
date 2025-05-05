@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Payload Manual Setup
 
-## Getting Started
+This repository contains a manually configured setup for a Next.js project integrated with Payload CMS. It includes multilingual support using `next-intl`, a MongoDB database connection, and Payload's rich text editor. The project is designed to serve as a starting point for building a CMS-powered web application.
 
-First, run the development server:
+## Requirements
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+To run this project, ensure you have the following installed:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Node.js**: Version 18 or higher
+- **npm**: Version 8 or higher
+- **MongoDB**: A running MongoDB instance
+- **Sharp**: Ensure the `sharp` library is installed correctly on your system (required for image processing)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env` file in the root directory of the project and define the following variables:
 
-## Learn More
+- `PAYLOAD_SECRET`: A secure string used as the Payload CMS secret.
+- `MONGODB_URI`: The connection string for your MongoDB database.
 
-To learn more about Next.js, take a look at the following resources:
+## Run the Development Server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. npm install
+2. npm run dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Start the Production Server
 
-## Deploy on Vercel
+1. npm install
+2. npm run build
+3. npm run start
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Payload CMS Integration:
+The project uses Payload CMS for managing content. Collections and configurations are defined in the `app/(payload)/_collections` directory.
+
+### Multilingual Support:
+The project supports multiple languages (en and it) using next-intl. Language files are located in `lib/i18n/locales/{lang}.json`.
+
+### GraphQL API:
+A GraphQL API is available at `/api/graphql`.
+
+### REST API:
+REST endpoints are available under `/api/[...slug]`.
+
+### Rich Text Editor:
+Payload's Lexical Rich Text Editor is integrated for content editing.
+
+### Custom SASS Styling:
+Global styles are defined in `app\(app)\_style\globals.css`.
+
+ 

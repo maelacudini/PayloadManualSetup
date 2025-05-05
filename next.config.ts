@@ -1,7 +1,17 @@
-import type { NextConfig } from "next";
+import { withPayload } from '@payloadcms/next/withPayload'
+import createNextIntlPlugin from 'next-intl/plugin';
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    reactCompiler: false,
+  },
+}
 
-export default nextConfig;
+const withNextIntl = createNextIntlPlugin(
+  './lib/i18n/request.tsx'
+);
+
+const withNextIntlConfig = withNextIntl(nextConfig)
+
+export default withPayload(withNextIntlConfig)

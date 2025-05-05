@@ -8,18 +8,27 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "type": "module",
   "dependencies": {
+    "@payloadcms/db-mongodb": "^3.36.1",
+    "@payloadcms/next": "^3.36.1",
+    "@payloadcms/richtext-lexical": "^3.36.1",
+    "@payloadcms/translations": "^3.36.1",
+    "graphql": "^16.11.0",
+    "next": "15.3.1",
+    "next-intl": "^4.1.0",
+    "payload": "^3.36.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.3.1"
+    "sharp": "^0.34.1"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.1",
-    "@eslint/eslintrc": "^3"
+    "typescript": "^5"
   }
 }
