@@ -1,5 +1,6 @@
 {
   "home": {
-    "greeting": "Ciao!"
+    "greeting": "Ciao!",
+    "articles": "Articoli"
   }
 }

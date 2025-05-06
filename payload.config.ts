@@ -5,6 +5,7 @@ import { buildConfig } from 'payload'
 import { en } from '@payloadcms/translations/languages/en'
 import { it } from '@payloadcms/translations/languages/it'
 import { Article } from './app/(payload)/_collections/article'
+import { DEFAULT_LOCALE, LOCALES } from './utils/constants'
 
 export default buildConfig({
   // If you'd like to use Rich Text, pass your editor here
@@ -15,6 +16,9 @@ export default buildConfig({
     Article
   ],
 
+  // Implement email notifications, see https://payloadcms.com/docs/email/overview
+  // email: {}
+
   // Your Payload secret - should be a complex and secure string, unguessable
   secret: process.env.PAYLOAD_SECRET || '',
   // Whichever Database Adapter you're using should go here
@@ -23,12 +27,29 @@ export default buildConfig({
     url: process.env.NMONGODB_URI || '',
   }),
 
-  //TODO: ADD NEXT-INTL
+  /*
   i18n: {
-    fallbackLanguage: 'en',
-    supportedLanguages: { en, it },
+    fallbackLanguage: DEFAULT_LOCALE,
+    supportedLanguages: { en },
     translations: {}
   },
+  */
+
+  localization: {
+    locales: [
+      {
+        label: 'English',
+        code: 'en',
+      },
+      {
+        label: 'Italian',
+        code: 'it',
+      },
+    ],
+    defaultLocale: 'en',
+    fallback: true,
+  },
+
   // If you want to resize images, crop, set focal point, etc.
   // make sure to install it and pass it to the config.
   // This is optional - if you don't need to do these things,

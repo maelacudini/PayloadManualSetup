@@ -2,6 +2,7 @@ import type { CollectionConfig } from 'payload'
 
 export const Article: CollectionConfig = {
   slug: 'article',
+  auth: false,
   access: {
     read: () => true,
   },
@@ -9,13 +10,16 @@ export const Article: CollectionConfig = {
     {
       name: 'title',
       type: 'text',
+      localized: true,
       required: true,
     },
     {
       name: 'description',
-      type: 'text',
+      type: 'textarea',
+      localized: true,
       required: true,
     },
   ],
-  upload: true,
+  timestamps: true,
+  upload: false,
 }
