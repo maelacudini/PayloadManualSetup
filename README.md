@@ -37,9 +37,6 @@ The project uses Payload CMS for managing content. Collections and configuration
 ### Multilingual Support:
 The project supports multiple languages (en and it) using next-intl. Language files are located in `lib/i18n/locales/{lang}.json`.
 
-### GraphQL API:
-A GraphQL API is available at `/api/graphql`.
-
 ### REST API:
 REST endpoints are available under `/api/[...slug]`.
 

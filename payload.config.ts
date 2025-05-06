@@ -2,10 +2,7 @@ import sharp from 'sharp'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { buildConfig } from 'payload'
-import { en } from '@payloadcms/translations/languages/en'
-import { it } from '@payloadcms/translations/languages/it'
 import { Article } from './app/(payload)/_collections/article'
-import { DEFAULT_LOCALE, LOCALES } from './utils/constants'
 
 export default buildConfig({
   // If you'd like to use Rich Text, pass your editor here
