@@ -3,7 +3,9 @@ import { FC } from 'react'
 import { ButtonPropsType } from './types';
 
 export const Button: FC<ButtonPropsType> = (props) => {
-  const { children, variant = 'primary', size = 'default', className = '', ...rest } = props;
+  const {
+    children, variant = 'primary', size = 'default', className = '', ...rest 
+  } = props;
 
   return (
     <button

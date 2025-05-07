@@ -3,9 +3,7 @@ import type { CollectionConfig } from 'payload'
 export const Article: CollectionConfig = {
   slug: 'article',
   auth: false,
-  access: {
-    read: () => true,
-  },
+  access: { read: () => true, },
   fields: [
     {
       name: 'title',

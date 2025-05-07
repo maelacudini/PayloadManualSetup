@@ -1,11 +1,10 @@
 "use client";
 
-import {
-  createContext,
+import { createContext,
+  ReactNode,
   useCallback,
   useEffect,
-  useState,
-} from "react";
+  useState } from "react";
 import { ThemeContextType, ThemeType } from "./types";
 import { DEFAULT_THEME } from "@/utils/constants";
 
@@ -16,7 +15,7 @@ const defaultTheme: ThemeContextType = {
 
 export const ThemeContext = createContext(defaultTheme);
 
-export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
+export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<ThemeType>(DEFAULT_THEME);
 
   useEffect(() => {

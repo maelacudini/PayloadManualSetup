@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/context/theme/ThemeContext";
 import { BodyLayout } from "./_components/layouts/BodyLayout";
 import { MainLayout } from "./_components/layouts/MainLayout";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ReactNode } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,10 +23,8 @@ export const metadata: Metadata = {
   description: "Next.js & Payload App Setup, with custom dark mode and next-intl.",
 };
 
-export default async function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
+export default async function RootLayout({ children, }: Readonly<{
+  children: ReactNode;
 }>) {
   const locale = await getLocale();
 

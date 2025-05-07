@@ -3,9 +3,8 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    reactCompiler: false,
-  },
+  experimental: { reactCompiler: false, },
+  eslint: { dirs: ['app', 'context', 'lib', 'utils'], },
 }
 
 const withNextIntl = createNextIntlPlugin(

@@ -4,7 +4,6 @@ import { ToggleLang } from "./_components/molecules/ToggleLang";
 import { ToggleTheme } from "./_components/molecules/ToggleTheme";
 import { Fragment } from "react";
 
-
 export default async function Home() {
   const t = await getTranslations('home');
   const articles = await getCollection('article');  
@@ -16,7 +15,9 @@ export default async function Home() {
 
       <h1>{t('greeting')}</h1>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <div style={{ 
+        display: 'flex', flexDirection: 'column', gap: '1rem' 
+      }}>
         <h2>{t('articles')}</h2>
         {articles.docs && articles.docs.map((article: any) => (
           <div key={article.id}>

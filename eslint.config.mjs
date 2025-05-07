@@ -5,17 +5,29 @@ import { FlatCompat } from "@eslint/eslintrc";
 const __filename = fileURLToPath( import.meta.url );
 const __dirname = dirname( __filename );
 
-const compat = new FlatCompat( {
-  baseDirectory: __dirname,
-} );
+const compat = new FlatCompat( { baseDirectory: __dirname, } );
 
 const eslintConfig = [
   ...compat.extends( "next/core-web-vitals", "next/typescript" ),
   {
     "rules": {
-      "no-console": [ "error", { allow: [ "warn", "error" ] } ],
+      "no-unused-vars": "error",
+      "no-undef": "error",
+      "no-console": "error",
+      "no-empty": "error",
+      "no-duplicate-imports": "error",
+      "object-curly-newline": [ "error", {
+        "ObjectExpression": { "multiline": true, "minProperties": 3 },
+        "ObjectPattern": { "multiline": true, "minProperties": 3 },
+        "ImportDeclaration": "never",
+        "ExportDeclaration": "never"
+      } ],
       "indent": [ "error", 2 ],
-      "space-in-brackets": [ "error", "always" ],
+      "indent-legacy": [ "error", 2, {
+        "ObjectExpression": 1,
+        "ArrayExpression": 1,
+        "SwitchCase": 1,
+      } ],
       "object-curly-spacing": [ "error", "always" ],
       "no-debugger": "error",
       "no-dupe-args": "error",
@@ -24,8 +36,6 @@ const eslintConfig = [
       "max-lines": [ "error", 500 ],
       "max-depth": [ "error", 4 ],
       "max-params": [ "error", 3 ],
-      "no-console": "error",
-      "no-empty": "error",
       "no-inline-comments": "error",
       "sort-imports": [ "error", {
         "ignoreCase": true,
@@ -34,7 +44,6 @@ const eslintConfig = [
         "memberSyntaxSortOrder": [ "none", "all", "multiple", "single" ],
         "allowSeparatedGroups": true
       } ],
-      "yoda": "error"
     }
   },
 ];

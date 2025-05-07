@@ -1,6 +1,6 @@
 'use server';
 
-import {cookies} from 'next/headers';
+import { cookies } from 'next/headers';
 import { COOKIE_NAME, DEFAULT_LOCALE } from '../constants';
 import { LocaleType } from '@/lib/i18n/types';
 
