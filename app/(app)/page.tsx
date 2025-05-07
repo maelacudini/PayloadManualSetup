@@ -19,6 +19,7 @@ export default async function Home() {
         display: 'flex', flexDirection: 'column', gap: '1rem' 
       }}>
         <h2>{t('articles')}</h2>
+        {/*eslint-disable-next-line @typescript-eslint/no-explicit-any*/}
         {articles.docs && articles.docs.map((article: any) => (
           <div key={article.id}>
             <h3>{article.title}</h3>

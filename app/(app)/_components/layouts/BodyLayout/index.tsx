@@ -1,4 +1,6 @@
-import { FC, HTMLAttributes, PropsWithChildren } from 'react'
+import {
+  FC, HTMLAttributes, PropsWithChildren 
+} from 'react'
 import "./style.scss";
 
 export const BodyLayout: FC<PropsWithChildren<HTMLAttributes<HTMLBodyElement>>> = (props) => {

@@ -17,9 +17,15 @@ const eslintConfig = [
       "no-empty": "error",
       "no-duplicate-imports": "error",
       "object-curly-newline": [ "error", {
-        "ObjectExpression": { "multiline": true, "minProperties": 3 },
-        "ObjectPattern": { "multiline": true, "minProperties": 3 },
-        "ImportDeclaration": "never",
+        "ObjectExpression": {
+          "multiline": true, "minProperties": 3, "consistent": true
+        },
+        "ObjectPattern": {
+          "multiline": true, "minProperties": 3, "consistent": true
+        },
+        "ImportDeclaration": {
+          "multiline": true, "minProperties": 3, "consistent": true
+        },
         "ExportDeclaration": "never"
       } ],
       "indent": [ "error", 2 ],
