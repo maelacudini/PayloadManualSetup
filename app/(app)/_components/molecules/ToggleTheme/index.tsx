@@ -6,12 +6,12 @@ import { Button } from "../../atoms/Button"
 import { Moon, Sun } from "lucide-react"
 
 export const ToggleTheme = () => {
-  const { updateTheme } = useTheme()
+  const { setTheme } = useTheme()
 
   return (
     <div style={{ display: 'flex', gap: '1rem' }}>
       {THEMES.map((theme) => (
-        <Button variant="outline" size="icon" key={theme} onClick={() => updateTheme(theme)}>
+        <Button variant="outline" size="icon" key={theme} onClick={() => setTheme(theme)}>
           {theme === 'dark' ? <Moon size={ICON_SIZE.md} /> : <Sun size={ICON_SIZE.md} />}
         </Button>
       ))}
